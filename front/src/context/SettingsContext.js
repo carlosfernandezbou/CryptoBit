@@ -50,7 +50,7 @@ function buildPalette(isDark) {
 export function SettingsProvider({ children }) {
   const { userId } = useContext(Context);
 
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [language, setLanguage] = useState("EN");
   const [currency, setCurrency] = useState("USD");
   const [faceId, setFaceId] = useState(true);
