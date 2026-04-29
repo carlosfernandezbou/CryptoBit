@@ -1,0 +1,14 @@
+.idea
+*.idea
+
+### Archivos compilados ###
+target/
+*.class
+
+### Eclipse ###
+.metadata/
+.settings/
+.project
+.classpath
+*.log
+

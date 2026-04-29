@@ -1,0 +1,328 @@
+{
+  "NoAccount": {
+    "Question": "Sie haben kein Konto?",
+    "Register": "Registrieren"
+  },
+  "common": {
+    "cancel": "Abbrechen",
+    "ok": "OK",
+    "error": "Fehler"
+  },
+  "news": {
+    "headerTitle": "Neueste nachrichten",
+    "loading": "Markt wird analysiert...",
+    "sentiment": {
+      "optimistic": "Optimistisch",
+      "bearish": "Bärisch",
+      "neutral": "Neutral"
+    }
+  },
+  "transactions": {
+    "sendFunds": {
+      "title": "Geld senden",
+      "subtitle": "Ethereum Sepolia Netzwerk"
+    },
+    "movement": {
+      "sent": "Geld gesendet",
+      "received": "Geld erhalten",
+      "to": "An",
+      "from": "Von",
+      "recent": "Kürzlich"
+    },
+    "empty": {
+      "noTransactions": "Keine Transaktionen vorhanden"
+    },
+    "modal": {
+      "title": "Neue Überweisung",
+      "destinationAddress": "Zieladresse",
+      "amount": "Betrag (ETH)",
+      "privateKey": "Dein privater Schlüssel",
+      "confirm": "Signieren und senden",
+      "close": "Schließen",
+      "placeholders": {
+        "destination": "0x...",
+        "amount": "0.00",
+        "privateKey": "Schlüssel zum Signieren"
+      }
+    },
+    "alerts": {
+      "fillAllFields": "Bitte fülle alle Felder aus",
+      "successTitle": "Erfolg",
+      "transferOk": "Überweisung erfolgreich durchgeführt",
+      "transactionError": "Fehler bei der Transaktion",
+      "serverError": "Verbindung zum Server nicht möglich"
+    },
+    "errors": {
+      "fetchTransactions": "Fehler beim Laden der Transaktionen:"
+    },
+    "headerTitle": "Transaktionen",
+    "searchPlaceholder": "Empfänger oder Bewegung suchen…",
+    "sections": {
+      "quickActions": "Schnellaktionen",
+      "recentRecipients": "Letzte Empfänger",
+      "recentMovements": "Letzte Bewegungen"
+    },
+    "viewAll": "Alle anzeigen",
+    "newTransaction": "Neue Transaktion",
+    "quickActions": {
+      "deposit": {
+        "title": "Einzahlen",
+        "subtitle": "EUR zu Ihrer Wallet hinzufügen"
+      },
+      "transfer": {
+        "title": "Überweisen",
+        "subtitle": "An ein anderes Konto/IBAN"
+      },
+      "withdraw": {
+        "title": "Auszahlen",
+        "subtitle": "Auf Ihr Bankkonto"
+      }
+    },
+    "types": {
+      "deposit": "Einzahlung",
+      "withdraw": "Auszahlung",
+      "transfer": "Überweisung"
+    },
+    "dates": {
+      "today": "Heute",
+      "yesterday": "Gestern"
+    },
+    "to": {
+      "bank": "Bank"
+    }
+  },
+  "editProfile": {
+    "title": "Profil bearbeiten",
+    "helpImageUrl": "Füge eine Bild-URL ein ",
+    "help": {
+      "imageUrl": "Füge eine Bild-URL ein "
+    },
+    "labels": {
+      "image": "Bild (userImage)",
+      "firstName": "Vorname (firstName)",
+      "lastName": "Nachname (lastName)",
+      "birthDate": "Geburtsdatum (birthDate)",
+      "newPassword": "Neues Passwort (optional)"
+    },
+    "dateModal": {
+      "title": "Geburtsdatum",
+      "labels": {
+        "day": "Tag",
+        "month": "Monat",
+        "year": "Jahr"
+      },
+      "actions": {
+        "apply": "Übernehmen"
+      },
+      "alerts": {
+        "invalidDateTitle": "Ungültiges Datum",
+        "invalidDateMessage": "Verwende ein gültiges Format TT/MM/JJJJ."
+      }
+    },
+    "placeholders": {
+      "imageUrl": "https://...",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "birthDate": "tt/mm/jjjj",
+      "passwordOptional": "Leer lassen, um es nicht zu ändern",
+      "newPassword": "Leer lassen, um es nicht zu ändern"
+    },
+    "buttons": {
+      "save": "Änderungen speichern",
+      "cancel": "Abbrechen",
+      "changePhoto": "Foto ändern"
+    },
+    "actions": {
+      "save": "Änderungen speichern",
+      "openDateModal": "Öffnen"
+    },
+    "alerts": {
+      "errorTitle": "Fehler",
+      "okTitle": "OK",
+      "missingId": "Ich habe keine Benutzer-ID (user.id fehlt).",
+      "fillFields": "Fülle firstName, lastName, birthDate und userImage aus.",
+      "updated": "Profil aktualisiert",
+      "serverError": "Verbindung zum Server nicht möglich",
+      "permissionDeniedTitle": "Berechtigung verweigert",
+      "permissionDeniedMsg": "Ich brauche die Berechtigung, um auf deine Fotos zuzugreifen.",
+      "imageLoadError": "Das Bild konnte nicht geladen werden."
+    },
+    "errors": {
+      "missingUserId": "Ich habe keine Benutzer-ID (user.id fehlt).",
+      "fillAllRequired": "Fülle firstName, lastName, birthDate und userImage aus.",
+      "serverConnection": "Verbindung zum Server nicht möglich"
+    },
+    "success": {
+      "updated": "Profil aktualisiert"
+    }
+  },
+  "home": {
+    "searchPlaceholder": "Währung suchen...",
+    "filters": {
+      "all": "Alle",
+      "favorites": "Favoriten",
+      "gainers": "Gewinner",
+      "losers": "Verlierer"
+    },
+    "sections": {
+      "trending": "Trends",
+      "cryptos": "Kryptowährungen",
+      "topFilter": "Top {{filter}}"
+    },
+    "actions": {
+      "loadMore": "Mehr Coins laden"
+    },
+    "empty": {
+      "noData": "Keine Daten verfügbar"
+    },
+    "alerts": {
+      "couldNotSaveFavorite": "Konnte nicht gespeichert werden",
+      "couldNotRemoveFavorite": "Konnte nicht gelöscht werden"
+    }
+  },
+  "wallet": {
+    "greeting": "Hallo, {{name}}",
+    "live": "Live",
+    "totalBalance": "Gesamtsaldo",
+    "noWallet": "Keine Wallet",
+    "yourAssets": "Deine Assets",
+    "errors": {
+      "server": "Serverfehler",
+      "fetchPortfolio": "Fehler beim Abrufen des Portfolios"
+    }
+  },
+  "register": {
+    "title": "Erstellen Sie Ihr Konto",
+    "subtitle": "Treten Sie noch heute der Zukunft der Kryptowährung bei.\nRegistrieren Sie sich, um mit dem Handel zu beginnen.",
+    "labels": {
+      "profilePhotoOptional": "Profilbild (optional)",
+      "name": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "dni": "ID / NIE",
+      "birthDate": "Geburtsdatum"
+    },
+    "avatar": {
+      "selectImage": "Bild auswählen",
+      "fromFiles": "Aus Dateien",
+      "fromGallery": "Aus der Galerie"
+    },
+    "placeholders": {
+      "name": "Ihr Vorname",
+      "lastName": "Ihr Nachname",
+      "email": "z.B. benutzer@email.com",
+      "password": "••••••••••••",
+      "dni": "12345678X",
+      "birthDate": "Geburtsdatum auswählen"
+    },
+    "terms": {
+      "textPrefix": "Ich akzeptiere die",
+      "termsOfService": "Nutzungsbedingungen",
+      "and": "und die",
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "textSuffix": "."
+    },
+    "buttons": {
+      "register": "REGISTRIEREN"
+    },
+    "footer": {
+      "haveAccount": "Haben Sie bereits ein Konto?",
+      "login": "Anmelden"
+    },
+    "alerts": {
+      "errorTitle": "Fehler",
+      "successTitle": "Erfolg",
+      "fillAllFields": "Bitte alle Felder ausfüllen.",
+      "acceptTerms": "Sie müssen die Nutzungsbedingungen akzeptieren.",
+      "permissionDeniedTitle": "Berechtigung verweigert",
+      "permissionDeniedMsg": "Sie benötigen Zugriff auf die Galerie.",
+      "galleryError": "Galerie konnte nicht geöffnet werden.",
+      "serverError": "Verbindung zum Server nicht möglich.",
+      "registerOk": "Benutzer erfolgreich registriert",
+      "registerFail": "Registrierung fehlgeschlagen"
+    }
+  },
+  "login": {
+    "title": "Willkommen",
+    "subtitle": "Greifen Sie auf Ihre sichere Wallet zu",
+    "placeholders": {
+      "email": "E-Mail",
+      "password": "••••••••••••"
+    },
+    "forgotPassword": "Passwort vergessen?",
+    "buttons": {
+      "login": "Anmelden",
+      "faceId": "Mit Face ID anmelden"
+    },
+    "biometric": {
+      "noSupportTitle": "Fehler",
+      "noSupportMsg": "Dieses Gerät unterstützt keine Biometrie.",
+      "notEnrolledTitle": "Fehler",
+      "notEnrolledMsg": "Face ID ist nicht eingerichtet.",
+      "promptMessage": "Mit Face ID authentifizieren",
+      "fallbackLabel": "Code eingeben",
+      "successTitle": "Erfolg",
+      "successMsg": "Willkommen",
+      "notAuthTitle": "Nicht authentifiziert",
+      "cancelled": "Abgebrochen",
+      "criticalTitle": "Kritischer Fehler",
+      "reason": "Grund: {{reason}}"
+    },
+    "alerts": {
+      "errorTitle": "Fehler",
+      "fillAllFields": "Bitte alle Felder ausfüllen",
+      "connectionError": "Verbindungsfehler. Bitte später erneut versuchen.",
+      "loginOkNoId": "Anmeldung erfolgreich, aber die Benutzer-ID konnte nicht abgerufen werden.",
+      "invalidIdResponse": "Anmeldung erfolgreich, aber die Antwort enthält keine gültige ID.",
+      "profileDataError": "Die Profildaten konnten nicht abgerufen werden."
+    }
+  },
+  "profile": {
+    "fallbackUser": "Benutzer",
+    "privateKey": {
+      "prefix": "PK:",
+      "noKey": "Kein Schlüssel"
+    },
+    "deleteAccount": {
+      "button": "Konto löschen",
+      "title": "Löschen",
+      "confirmMessage": "Bist du sicher?",
+      "actions": {
+        "no": "Nein",
+        "yes": "Ja"
+      },
+      "alerts": {
+        "connectionError": "Verbindung nicht möglich"
+      }
+    },
+    "settingsTitle": "Einstellungen",
+    "versionPrefix": "Version",
+    "sections": {
+      "account": "Konto",
+      "security": "Sicherheit",
+      "preferences": "Einstellungen"
+    },
+    "items": {
+      "editProfile": "Profil bearbeiten",
+      "lightDark": "Hell/Dunkel",
+      "faceId": "Face ID",
+      "twoFA": "2FA-Authentifizierung",
+      "kyc": "KYC-Verifizierung",
+      "notifications": "Benachrichtigungen",
+      "localCurrency": "Lokale Währung",
+      "language": "Sprache",
+      "logout": "Abmelden"
+    },
+    "status": {
+      "enabled": "Aktiviert",
+      "kycLevel2": "Verifiziert Level 2"
+    }
+  },
+  "nav": {
+    "home": "Start",
+    "wallet": "Wallet",
+    "news": "Nachrichten",
+    "profile": "Profil"
+  }
+}

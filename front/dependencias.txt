@@ -1,0 +1,30 @@
+//NAVEGACION
+npm install @react-navigation/native
+npm install @react-navigation/bottom-tabs
+npm install @react-navigation/stack
+npm install @react-navigation/drawer
+//ICONOS
+npx expo install @expo/vector-icons
+npx expo install react-native-svg
+//COLORES
+npx expo install expo-av
+npx expo install expo-linear-gradient
+//FACE ID
+npx expo install expo-local-authentication
+//i18n
+npm install react-i18next i18next --save
+//Contraseña encriptada
+npm install crypto-js
+//CALENDARIO FORMULARIO REGISTRO
+npx expo install @react-native-community/datetimepicker
+npx expo install expo-datepicker
+//CLAVE WALLET USUARIO CIFRADA 
+npx expo install ethers@5.7.2 react-native-get-random-values @ethersproject/shims
+npx expo install expo-secure-store
+//IMAGENES
+npx expo install expo-image-picker
+//SPLASH-SCREEN
+npx expo install expo-splash-screen
+
+
+

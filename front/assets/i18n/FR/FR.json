@@ -1,0 +1,328 @@
+{
+  "NoAccount": {
+    "Question": "Vous n'avez pas de compte ?",
+    "Register": "S'inscrire"
+  },
+  "common": {
+    "cancel": "Annuler",
+    "ok": "OK",
+    "error": "Erreur"
+  },
+  "news": {
+    "headerTitle": "Dernières nouvelles",
+    "loading": "Analyse du marché...",
+    "sentiment": {
+      "optimistic": "Optimiste",
+      "bearish": "Baissier",
+      "neutral": "Neutre"
+    }
+  },
+  "transactions": {
+    "sendFunds": {
+      "title": "Envoyer des fonds",
+      "subtitle": "Réseau Ethereum Sepolia"
+    },
+    "movement": {
+      "sent": "Argent envoyé",
+      "received": "Argent reçu",
+      "to": "À",
+      "from": "De",
+      "recent": "Récent"
+    },
+    "empty": {
+      "noTransactions": "Aucune transaction enregistrée"
+    },
+    "modal": {
+      "title": "Nouveau virement",
+      "destinationAddress": "Adresse de destination",
+      "amount": "Montant (ETH)",
+      "privateKey": "Votre clé privée",
+      "confirm": "Signer et envoyer",
+      "close": "Fermer",
+      "placeholders": {
+        "destination": "0x...",
+        "amount": "0.00",
+        "privateKey": "Clé pour signer"
+      }
+    },
+    "alerts": {
+      "fillAllFields": "Veuillez remplir tous les champs",
+      "successTitle": "Succès",
+      "transferOk": "Virement effectué avec succès",
+      "transactionError": "Erreur de transaction",
+      "serverError": "Impossible de se connecter au serveur"
+    },
+    "errors": {
+      "fetchTransactions": "Erreur lors du chargement des transactions :"
+    },
+    "headerTitle": "Transactions",
+    "searchPlaceholder": "Rechercher un destinataire ou un mouvement…",
+    "sections": {
+      "quickActions": "Actions rapides",
+      "recentRecipients": "Destinataires récents",
+      "recentMovements": "Mouvements récents"
+    },
+    "viewAll": "Voir tout",
+    "newTransaction": "Nouvelle transaction",
+    "quickActions": {
+      "deposit": {
+        "title": "Déposer",
+        "subtitle": "Ajoutez des EUR à votre portefeuille"
+      },
+      "transfer": {
+        "title": "Transférer",
+        "subtitle": "Vers un autre compte/IBAN"
+      },
+      "withdraw": {
+        "title": "Retirer",
+        "subtitle": "Vers votre banque"
+      }
+    },
+    "types": {
+      "deposit": "Dépôt",
+      "withdraw": "Retrait",
+      "transfer": "Virement"
+    },
+    "dates": {
+      "today": "Aujourd'hui",
+      "yesterday": "Hier"
+    },
+    "to": {
+      "bank": "Banque"
+    }
+  },
+  "editProfile": {
+    "title": "Modifier le profil",
+    "helpImageUrl": "Collez une URL d'image ",
+    "help": {
+      "imageUrl": "Collez une URL d'image "
+    },
+    "labels": {
+      "image": "Image (userImage)",
+      "firstName": "Prénom (firstName)",
+      "lastName": "Nom de famille (lastName)",
+      "birthDate": "Date de naissance (birthDate)",
+      "newPassword": "Nouveau mot de passe (optionnel)"
+    },
+    "dateModal": {
+      "title": "Date de naissance",
+      "labels": {
+        "day": "Jour",
+        "month": "Mois",
+        "year": "Année"
+      },
+      "actions": {
+        "apply": "Appliquer"
+      },
+      "alerts": {
+        "invalidDateTitle": "Date invalide",
+        "invalidDateMessage": "Utilisez un format valide jj/mm/aaaa."
+      }
+    },
+    "placeholders": {
+      "imageUrl": "https://...",
+      "firstName": "Prénom",
+      "lastName": "Nom de famille",
+      "birthDate": "jj/mm/aaaa",
+      "passwordOptional": "Laissez vide pour ne pas modifier",
+      "newPassword": "Laissez vide pour ne pas modifier"
+    },
+    "buttons": {
+      "save": "Enregistrer les modifications",
+      "cancel": "Annuler",
+      "changePhoto": "Changer la photo"
+    },
+    "actions": {
+      "save": "Enregistrer les modifications",
+      "openDateModal": "Ouvrir"
+    },
+    "alerts": {
+      "errorTitle": "Erreur",
+      "okTitle": "OK",
+      "missingId": "Je n'ai pas l'identifiant de l'utilisateur (user.id manquant).",
+      "fillFields": "Remplissez firstName, lastName, birthDate et userImage.",
+      "updated": "Profil mis à jour",
+      "serverError": "Impossible de se connecter au serveur",
+      "permissionDeniedTitle": "Permission refusée",
+      "permissionDeniedMsg": "J'ai besoin de l'autorisation pour accéder à vos photos.",
+      "imageLoadError": "Impossible de charger l'image."
+    },
+    "errors": {
+      "missingUserId": "Je n'ai pas l'identifiant de l'utilisateur (user.id manquant).",
+      "fillAllRequired": "Remplissez firstName, lastName, birthDate et userImage.",
+      "serverConnection": "Impossible de se connecter au serveur"
+    },
+    "success": {
+      "updated": "Profil mis à jour"
+    }
+  },
+  "home": {
+    "searchPlaceholder": "Rechercher une monnaie...",
+    "filters": {
+      "all": "Toutes",
+      "favorites": "Favoris",
+      "gainers": "Gagnantes",
+      "losers": "Perdantes"
+    },
+    "sections": {
+      "trending": "Tendances",
+      "cryptos": "Cryptomonnaies",
+      "topFilter": "Top {{filter}}"
+    },
+    "actions": {
+      "loadMore": "Charger plus de monnaies"
+    },
+    "empty": {
+      "noData": "Aucune donnée disponible"
+    },
+    "alerts": {
+      "couldNotSaveFavorite": "Impossible d'enregistrer",
+      "couldNotRemoveFavorite": "Impossible de supprimer"
+    }
+  },
+  "wallet": {
+    "greeting": "Bonjour, {{name}}",
+    "live": "En direct",
+    "totalBalance": "Solde total",
+    "noWallet": "Pas de wallet",
+    "yourAssets": "Vos actifs",
+    "errors": {
+      "server": "Erreur du serveur",
+      "fetchPortfolio": "Erreur lors de la récupération du portefeuille"
+    }
+  },
+  "register": {
+    "title": "Créez votre compte",
+    "subtitle": "Rejoignez dès aujourd'hui l'avenir de la finance crypto.\nInscrivez-vous pour commencer à trader.",
+    "labels": {
+      "profilePhotoOptional": "Photo de profil (optionnel)",
+      "name": "Prénom",
+      "lastName": "Nom",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "dni": "ID / NIE",
+      "birthDate": "Date de naissance"
+    },
+    "avatar": {
+      "selectImage": "Choisir une image",
+      "fromFiles": "Depuis les fichiers",
+      "fromGallery": "Depuis la galerie"
+    },
+    "placeholders": {
+      "name": "Votre prénom",
+      "lastName": "Votre nom",
+      "email": "ex. utilisateur@email.com",
+      "password": "••••••••••••",
+      "dni": "12345678X",
+      "birthDate": "Sélectionner la date de naissance"
+    },
+    "terms": {
+      "textPrefix": "J'accepte les",
+      "termsOfService": "Conditions d'utilisation",
+      "and": "et la",
+      "privacyPolicy": "Politique de confidentialité",
+      "textSuffix": "."
+    },
+    "buttons": {
+      "register": "S'INSCRIRE"
+    },
+    "footer": {
+      "haveAccount": "Vous avez déjà un compte ?",
+      "login": "Se connecter"
+    },
+    "alerts": {
+      "errorTitle": "Erreur",
+      "successTitle": "Succès",
+      "fillAllFields": "Veuillez remplir tous les champs.",
+      "acceptTerms": "Vous devez accepter les conditions générales.",
+      "permissionDeniedTitle": "Autorisation refusée",
+      "permissionDeniedMsg": "Vous avez besoin d'une autorisation pour accéder à la galerie.",
+      "galleryError": "Impossible d'ouvrir la galerie.",
+      "serverError": "Impossible de se connecter au serveur.",
+      "registerOk": "Utilisateur enregistré avec succès",
+      "registerFail": "Impossible de s'inscrire"
+    }
+  },
+  "login": {
+    "title": "Bienvenue",
+    "subtitle": "Accédez à votre portefeuille sécurisé",
+    "placeholders": {
+      "email": "E-mail",
+      "password": "••••••••••••"
+    },
+    "forgotPassword": "Mot de passe oublié ?",
+    "buttons": {
+      "login": "Se connecter",
+      "faceId": "Se connecter avec Face ID"
+    },
+    "biometric": {
+      "noSupportTitle": "Erreur",
+      "noSupportMsg": "Cet appareil ne prend pas en charge la biométrie.",
+      "notEnrolledTitle": "Erreur",
+      "notEnrolledMsg": "Face ID n'est pas configuré sur cet iPhone.",
+      "promptMessage": "Authentifiez-vous avec Face ID",
+      "fallbackLabel": "Saisir le code",
+      "successTitle": "Succès",
+      "successMsg": "Bienvenue",
+      "notAuthTitle": "Non authentifié",
+      "cancelled": "Annulé",
+      "criticalTitle": "Erreur critique",
+      "reason": "Motif : {{reason}}"
+    },
+    "alerts": {
+      "errorTitle": "Erreur",
+      "fillAllFields": "Veuillez remplir tous les champs",
+      "connectionError": "Erreur de connexion. Veuillez réessayer plus tard.",
+      "loginOkNoId": "Connexion OK, mais impossible de récupérer l'ID.",
+      "invalidIdResponse": "Connexion OK, mais la réponse ne contient pas d'ID valide.",
+      "profileDataError": "Impossible de récupérer les données du profil."
+    }
+  },
+  "profile": {
+    "fallbackUser": "Utilisateur",
+    "privateKey": {
+      "prefix": "PK :",
+      "noKey": "Pas de clé"
+    },
+    "deleteAccount": {
+      "button": "Supprimer le compte",
+      "title": "Supprimer",
+      "confirmMessage": "Êtes-vous sûr ?",
+      "actions": {
+        "no": "Non",
+        "yes": "Oui"
+      },
+      "alerts": {
+        "connectionError": "Impossible de se connecter"
+      }
+    },
+    "settingsTitle": "Paramètres",
+    "versionPrefix": "Version",
+    "sections": {
+      "account": "Compte",
+      "security": "Sécurité",
+      "preferences": "Préférences"
+    },
+    "items": {
+      "editProfile": "Modifier le profil",
+      "lightDark": "Clair/Sombre",
+      "faceId": "Face ID",
+      "twoFA": "Authentification 2FA",
+      "kyc": "Vérification KYC",
+      "notifications": "Notifications",
+      "localCurrency": "Devise locale",
+      "language": "Langue",
+      "logout": "Se déconnecter"
+    },
+    "status": {
+      "enabled": "Activé",
+      "kycLevel2": "Vérifié niveau 2"
+    }
+  },
+  "nav": {
+    "home": "Accueil",
+    "wallet": "Portefeuille",
+    "news": "Actualités",
+    "profile": "Profil"
+  }
+}

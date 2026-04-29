@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "CryptoBit",
+    "slug": "CryptoBit",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "bundleIdentifier": "com.cryptobit",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Necesitamos usar Face ID para desbloquear tu cartera de forma segura.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.cryptobit.front",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/logo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "eb4d57e2-0523-471f-93f0-e3a19633bea4"
+      }
+    },
+    "plugins": [
+      "@react-native-community/datetimepicker",
+      "expo-secure-store"
+    ]
+  }
+}

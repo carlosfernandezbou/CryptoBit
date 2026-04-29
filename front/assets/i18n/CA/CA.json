@@ -1,0 +1,328 @@
+{
+  "NoAccount": {
+    "Question": "No tens un compte?",
+    "Register": "Registra't"
+  },
+  "common": {
+    "cancel": "Cancel·lar",
+    "ok": "D'acord",
+    "error": "Error"
+  },
+  "news": {
+    "headerTitle": "Ultimes noticies",
+    "loading": "Analitzant el mercat...",
+    "sentiment": {
+      "optimistic": "Optimista",
+      "bearish": "Baixista",
+      "neutral": "Neutral"
+    }
+  },
+  "transactions": {
+    "sendFunds": {
+      "title": "Enviar fons",
+      "subtitle": "Xarxa Ethereum Sepolia"
+    },
+    "movement": {
+      "sent": "Diners enviats",
+      "received": "Diners rebuts",
+      "to": "A",
+      "from": "De",
+      "recent": "Recent"
+    },
+    "empty": {
+      "noTransactions": "No hi ha transaccions registrades"
+    },
+    "modal": {
+      "title": "Nova transferència",
+      "destinationAddress": "Adreça de destí",
+      "amount": "Quantitat (ETH)",
+      "privateKey": "La teua clau privada",
+      "confirm": "Signar i enviar",
+      "close": "Tancar",
+      "placeholders": {
+        "destination": "0x...",
+        "amount": "0.00",
+        "privateKey": "Clau per a signar"
+      }
+    },
+    "alerts": {
+      "fillAllFields": "Ompli tots els camps",
+      "successTitle": "Èxit",
+      "transferOk": "Transferència realitzada correctament",
+      "transactionError": "Error en la transacció",
+      "serverError": "No s'ha pogut connectar amb el servidor"
+    },
+    "errors": {
+      "fetchTransactions": "Error carregant transaccions:"
+    },
+    "headerTitle": "Transaccions",
+    "searchPlaceholder": "Buscar destinatari o moviment…",
+    "sections": {
+      "quickActions": "Accions ràpides",
+      "recentRecipients": "Últims destinataris",
+      "recentMovements": "Moviments recents"
+    },
+    "viewAll": "Veure-ho tot",
+    "newTransaction": "Nova transacció",
+    "quickActions": {
+      "deposit": {
+        "title": "Depositar",
+        "subtitle": "Afig EUR al teu wallet"
+      },
+      "transfer": {
+        "title": "Transferir",
+        "subtitle": "A un altre compte/IBAN"
+      },
+      "withdraw": {
+        "title": "Retirar",
+        "subtitle": "Al teu banc"
+      }
+    },
+    "types": {
+      "deposit": "Dipòsit",
+      "withdraw": "Retirada",
+      "transfer": "Transferència"
+    },
+    "dates": {
+      "today": "Hui",
+      "yesterday": "Ahir"
+    },
+    "to": {
+      "bank": "Banc"
+    }
+  },
+  "editProfile": {
+    "title": "Editar perfil",
+    "helpImageUrl": "Pega una URL d'imatge ",
+    "help": {
+      "imageUrl": "Pega una URL d'imatge "
+    },
+    "labels": {
+      "image": "Imatge (userImage)",
+      "firstName": "Nom (firstName)",
+      "lastName": "Cognoms (lastName)",
+      "birthDate": "Data de naixement (birthDate)",
+      "newPassword": "Nova contrasenya (opcional)"
+    },
+    "dateModal": {
+      "title": "Data de naixement",
+      "labels": {
+        "day": "Dia",
+        "month": "Mes",
+        "year": "Any"
+      },
+      "actions": {
+        "apply": "Aplicar"
+      },
+      "alerts": {
+        "invalidDateTitle": "Data no vàlida",
+        "invalidDateMessage": "Usa un format vàlid dd/mm/aaaa."
+      }
+    },
+    "placeholders": {
+      "imageUrl": "https://...",
+      "firstName": "Nom",
+      "lastName": "Cognoms",
+      "birthDate": "dd/mm/aaaa",
+      "passwordOptional": "Deixa-ho buit per a no canviar",
+      "newPassword": "Deixa-ho buit per a no canviar"
+    },
+    "buttons": {
+      "save": "Guardar canvis",
+      "cancel": "Cancel·lar",
+      "changePhoto": "Canviar foto"
+    },
+    "actions": {
+      "save": "Guardar canvis",
+      "openDateModal": "Obrir"
+    },
+    "alerts": {
+      "errorTitle": "Error",
+      "okTitle": "D'acord",
+      "missingId": "No tinc l'id de l'usuari (falta user.id).",
+      "fillFields": "Ompli firstName, lastName, birthDate i userImage.",
+      "updated": "Perfil actualitzat",
+      "serverError": "No s'ha pogut connectar amb el servidor",
+      "permissionDeniedTitle": "Permís denegat",
+      "permissionDeniedMsg": "Necessite permís per a accedir a les teues fotos.",
+      "imageLoadError": "No s'ha pogut carregar la imatge."
+    },
+    "errors": {
+      "missingUserId": "No tinc l'id de l'usuari (falta user.id).",
+      "fillAllRequired": "Ompli firstName, lastName, birthDate i userImage.",
+      "serverConnection": "No s'ha pogut connectar amb el servidor"
+    },
+    "success": {
+      "updated": "Perfil actualitzat"
+    }
+  },
+  "home": {
+    "searchPlaceholder": "Buscar moneda...",
+    "filters": {
+      "all": "Totes",
+      "favorites": "Favorits",
+      "gainers": "Guanyadores",
+      "losers": "Perdedors"
+    },
+    "sections": {
+      "trending": "Tendències",
+      "cryptos": "Criptomonedes",
+      "topFilter": "Top {{filter}}"
+    },
+    "actions": {
+      "loadMore": "Carregar més monedes"
+    },
+    "empty": {
+      "noData": "No hi ha dades disponibles"
+    },
+    "alerts": {
+      "couldNotSaveFavorite": "No s'ha pogut guardar",
+      "couldNotRemoveFavorite": "No s'ha pogut eliminar"
+    }
+  },
+  "wallet": {
+    "greeting": "Hola, {{name}}",
+    "live": "En viu",
+    "totalBalance": "Balance total",
+    "noWallet": "Sense wallet",
+    "yourAssets": "Els teus actius",
+    "errors": {
+      "server": "Error en el servidor",
+      "fetchPortfolio": "Error en obtindre el portafolis"
+    }
+  },
+  "register": {
+    "title": "Crea el teu compte",
+    "subtitle": "Uneix-te al futur de les finances cripto hui.\nRegistra't per a començar a operar.",
+    "labels": {
+      "profilePhotoOptional": "Foto de perfil (opcional)",
+      "name": "Nom",
+      "lastName": "Cognom",
+      "email": "Correu electrònic",
+      "password": "Contrasenya",
+      "dni": "DNI / NIE",
+      "birthDate": "Data de naixement"
+    },
+    "avatar": {
+      "selectImage": "Seleccionar imatge",
+      "fromFiles": "Des d'arxius",
+      "fromGallery": "Des de la galeria"
+    },
+    "placeholders": {
+      "name": "El teu nom",
+      "lastName": "El teu cognom",
+      "email": "p. ex. usuari@email.com",
+      "password": "••••••••••••",
+      "dni": "12345678X",
+      "birthDate": "Seleccionar data de naixement"
+    },
+    "terms": {
+      "textPrefix": "Accepte els",
+      "termsOfService": "Termes de Servei",
+      "and": "i la",
+      "privacyPolicy": "Política de Privacitat",
+      "textSuffix": "."
+    },
+    "buttons": {
+      "register": "REGISTRAR-SE"
+    },
+    "footer": {
+      "haveAccount": "Ja tens un compte?",
+      "login": "Iniciar sessió"
+    },
+    "alerts": {
+      "errorTitle": "Error",
+      "successTitle": "Èxit",
+      "fillAllFields": "Per favor, completa tots els camps.",
+      "acceptTerms": "Has d'acceptar els termes i condicions.",
+      "permissionDeniedTitle": "Permís denegat",
+      "permissionDeniedMsg": "Necessites permisos per a accedir a la galeria.",
+      "galleryError": "No s'ha pogut obrir la galeria.",
+      "serverError": "No s'ha pogut connectar amb el servidor.",
+      "registerOk": "Usuari registrat correctament",
+      "registerFail": "No s'ha pogut registrar"
+    }
+  },
+  "login": {
+    "title": "Benvingut/da",
+    "subtitle": "Accedeix a la teua cartera segura",
+    "placeholders": {
+      "email": "Correu electrònic",
+      "password": "••••••••••••"
+    },
+    "forgotPassword": "Has oblidat la contrasenya?",
+    "buttons": {
+      "login": "Iniciar sessió",
+      "faceId": "Entrar amb Face ID"
+    },
+    "biometric": {
+      "noSupportTitle": "Error",
+      "noSupportMsg": "Este dispositiu no suporta biometria.",
+      "notEnrolledTitle": "Error",
+      "notEnrolledMsg": "No tens cap rostre registrat en este iPhone.",
+      "promptMessage": "Autentica't amb Face ID",
+      "fallbackLabel": "Introduir codi",
+      "successTitle": "Èxit",
+      "successMsg": "Benvingut/da",
+      "notAuthTitle": "No autenticat",
+      "cancelled": "Cancel·lat",
+      "criticalTitle": "Error crític",
+      "reason": "Motiu: {{reason}}"
+    },
+    "alerts": {
+      "errorTitle": "Error",
+      "fillAllFields": "Per favor, ompli tots els camps",
+      "connectionError": "Error de connexió. Intenta-ho més tard.",
+      "loginOkNoId": "Login OK, però no s'ha pogut obtindre l'ID.",
+      "invalidIdResponse": "Login OK, però la resposta no porta un ID vàlid.",
+      "profileDataError": "No s'han pogut recuperar les dades del perfil."
+    }
+  },
+  "profile": {
+    "fallbackUser": "Usuari",
+    "privateKey": {
+      "prefix": "PK:",
+      "noKey": "Sense clau"
+    },
+    "deleteAccount": {
+      "button": "Eliminar compte",
+      "title": "Eliminar",
+      "confirmMessage": "Segur?",
+      "actions": {
+        "no": "No",
+        "yes": "Sí"
+      },
+      "alerts": {
+        "connectionError": "No s'ha pogut connectar"
+      }
+    },
+    "settingsTitle": "Configuració",
+    "versionPrefix": "Versió",
+    "sections": {
+      "account": "Compte",
+      "security": "Seguretat",
+      "preferences": "Preferències"
+    },
+    "items": {
+      "editProfile": "Editar perfil",
+      "lightDark": "Clar/Fosc",
+      "faceId": "Face ID",
+      "twoFA": "Autenticació 2FA",
+      "kyc": "Verificació KYC",
+      "notifications": "Notificacions",
+      "localCurrency": "Moneda local",
+      "language": "Idioma",
+      "logout": "Tancar sessió"
+    },
+    "status": {
+      "enabled": "Activat",
+      "kycLevel2": "Verificat nivell 2"
+    }
+  },
+  "nav": {
+    "home": "Inici",
+    "wallet": "Billetera",
+    "news": "Notícies",
+    "profile": "Perfil"
+  }
+}

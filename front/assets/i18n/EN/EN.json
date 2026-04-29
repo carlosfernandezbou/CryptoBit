@@ -1,0 +1,328 @@
+{
+  "NoAccount": {
+    "Question": "Don't have an account?",
+    "Register": "Sign up"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "ok": "OK",
+    "error": "Error"
+  },
+  "news": {
+    "headerTitle": "Latest news ",
+    "loading": "Analyzing the market...",
+    "sentiment": {
+      "optimistic": "Optimistic",
+      "bearish": "Bearish",
+      "neutral": "Neutral"
+    }
+  },
+  "transactions": {
+    "sendFunds": {
+      "title": "Send funds",
+      "subtitle": "Ethereum Sepolia Network"
+    },
+    "movement": {
+      "sent": "Money sent",
+      "received": "Money received",
+      "to": "To",
+      "from": "From",
+      "recent": "Recent"
+    },
+    "empty": {
+      "noTransactions": "No transactions found"
+    },
+    "modal": {
+      "title": "New transfer",
+      "destinationAddress": "Destination address",
+      "amount": "Amount (ETH)",
+      "privateKey": "Your private key",
+      "confirm": "Sign and send",
+      "close": "Close",
+      "placeholders": {
+        "destination": "0x...",
+        "amount": "0.00",
+        "privateKey": "Key to sign"
+      }
+    },
+    "alerts": {
+      "fillAllFields": "Please fill in all fields",
+      "successTitle": "Success",
+      "transferOk": "Transfer completed successfully",
+      "transactionError": "Transaction error",
+      "serverError": "Could not connect to the server"
+    },
+    "errors": {
+      "fetchTransactions": "Error loading transactions:"
+    },
+    "headerTitle": "Transactions",
+    "searchPlaceholder": "Search recipient or movement…",
+    "sections": {
+      "quickActions": "Quick actions",
+      "recentRecipients": "Recent recipients",
+      "recentMovements": "Recent movements"
+    },
+    "viewAll": "View all",
+    "newTransaction": "New transaction",
+    "quickActions": {
+      "deposit": {
+        "title": "Deposit",
+        "subtitle": "Add EUR to your wallet"
+      },
+      "transfer": {
+        "title": "Transfer",
+        "subtitle": "To another account/IBAN"
+      },
+      "withdraw": {
+        "title": "Withdraw",
+        "subtitle": "To your bank"
+      }
+    },
+    "types": {
+      "deposit": "Deposit",
+      "withdraw": "Withdraw",
+      "transfer": "Transfer"
+    },
+    "dates": {
+      "today": "Today",
+      "yesterday": "Yesterday"
+    },
+    "to": {
+      "bank": "Bank"
+    }
+  },
+  "editProfile": {
+    "title": "Edit profile",
+    "helpImageUrl": "Paste an image URL ",
+    "help": {
+      "imageUrl": "Paste an image URL "
+    },
+    "labels": {
+      "image": "Image (userImage)",
+      "firstName": "First name (firstName)",
+      "lastName": "Last name (lastName)",
+      "birthDate": "Birth date (birthDate)",
+      "newPassword": "New password (optional)"
+    },
+    "dateModal": {
+      "title": "Birth date",
+      "labels": {
+        "day": "Day",
+        "month": "Month",
+        "year": "Year"
+      },
+      "actions": {
+        "apply": "Apply"
+      },
+      "alerts": {
+        "invalidDateTitle": "Invalid date",
+        "invalidDateMessage": "Use a valid format dd/mm/yyyy."
+      }
+    },
+    "placeholders": {
+      "imageUrl": "https://...",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "birthDate": "dd/mm/yyyy",
+      "passwordOptional": "Leave empty to keep it unchanged",
+      "newPassword": "Leave empty to keep it unchanged"
+    },
+    "buttons": {
+      "save": "Save changes",
+      "cancel": "Cancel",
+      "changePhoto": "Change photo"
+    },
+    "actions": {
+      "save": "Save changes",
+      "openDateModal": "Open"
+    },
+    "alerts": {
+      "errorTitle": "Error",
+      "okTitle": "OK",
+      "missingId": "I don't have the user ID (missing user.id).",
+      "fillFields": "Fill in firstName, lastName, birthDate and userImage.",
+      "updated": "Profile updated",
+      "serverError": "Could not connect to the server",
+      "permissionDeniedTitle": "Permission denied",
+      "permissionDeniedMsg": "I need permission to access your photos.",
+      "imageLoadError": "Could not load the image."
+    },
+    "errors": {
+      "missingUserId": "I don't have the user ID (missing user.id).",
+      "fillAllRequired": "Fill in firstName, lastName, birthDate and userImage.",
+      "serverConnection": "Could not connect to the server"
+    },
+    "success": {
+      "updated": "Profile updated"
+    }
+  },
+  "home": {
+    "searchPlaceholder": "Search coin...",
+    "filters": {
+      "all": "All",
+      "favorites": "Favorites",
+      "gainers": "Gainers",
+      "losers": "Losers"
+    },
+    "sections": {
+      "trending": "Trending",
+      "cryptos": "Cryptocurrencies",
+      "topFilter": "Top {{filter}}"
+    },
+    "actions": {
+      "loadMore": "Load more coins"
+    },
+    "empty": {
+      "noData": "No data available"
+    },
+    "alerts": {
+      "couldNotSaveFavorite": "Could not save",
+      "couldNotRemoveFavorite": "Could not remove"
+    }
+  },
+  "wallet": {
+    "greeting": "Hello, {{name}}",
+    "live": "Live",
+    "totalBalance": "Total Balance",
+    "noWallet": "No wallet",
+    "yourAssets": "Your Assets",
+    "errors": {
+      "server": "Server error",
+      "fetchPortfolio": "Error fetching portfolio"
+    }
+  },
+  "register": {
+    "title": "Create your account",
+    "subtitle": "Join the future of crypto finance today.\nSign up to start trading.",
+    "labels": {
+      "profilePhotoOptional": "Profile photo (optional)",
+      "name": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "dni": "ID / NIE",
+      "birthDate": "Birth date"
+    },
+    "avatar": {
+      "selectImage": "Select image",
+      "fromFiles": "From files",
+      "fromGallery": "From gallery"
+    },
+    "placeholders": {
+      "name": "Your first name",
+      "lastName": "Your last name",
+      "email": "e.g. user@email.com",
+      "password": "••••••••••••",
+      "dni": "12345678X",
+      "birthDate": "Select birth date"
+    },
+    "terms": {
+      "textPrefix": "I accept the",
+      "termsOfService": "Terms of Service",
+      "and": "and the",
+      "privacyPolicy": "Privacy Policy",
+      "textSuffix": "."
+    },
+    "buttons": {
+      "register": "SIGN UP"
+    },
+    "footer": {
+      "haveAccount": "Already have an account?",
+      "login": "Log in"
+    },
+    "alerts": {
+      "errorTitle": "Error",
+      "successTitle": "Success",
+      "fillAllFields": "Please fill in all fields.",
+      "acceptTerms": "You must accept the terms and conditions.",
+      "permissionDeniedTitle": "Permission denied",
+      "permissionDeniedMsg": "You need permission to access the gallery.",
+      "galleryError": "Could not open the gallery.",
+      "serverError": "Could not connect to the server.",
+      "registerOk": "User registered successfully",
+      "registerFail": "Could not register"
+    }
+  },
+  "login": {
+    "title": "Welcome",
+    "subtitle": "Access your secure wallet",
+    "placeholders": {
+      "email": "Email",
+      "password": "••••••••••••"
+    },
+    "forgotPassword": "Forgot your password?",
+    "buttons": {
+      "login": "Log in",
+      "faceId": "Log in with Face ID"
+    },
+    "biometric": {
+      "noSupportTitle": "Error",
+      "noSupportMsg": "This device does not support biometrics.",
+      "notEnrolledTitle": "Error",
+      "notEnrolledMsg": "You don't have Face ID set up on this iPhone.",
+      "promptMessage": "Authenticate with Face ID",
+      "fallbackLabel": "Enter passcode",
+      "successTitle": "Success",
+      "successMsg": "Welcome",
+      "notAuthTitle": "Not authenticated",
+      "cancelled": "Cancelled",
+      "criticalTitle": "Critical error",
+      "reason": "Reason: {{reason}}"
+    },
+    "alerts": {
+      "errorTitle": "Error",
+      "fillAllFields": "Please fill in all fields",
+      "connectionError": "Connection error. Please try again later.",
+      "loginOkNoId": "Login OK, but the user ID could not be retrieved.",
+      "invalidIdResponse": "Login OK, but the response does not contain a valid ID.",
+      "profileDataError": "Could not retrieve profile data."
+    }
+  },
+  "profile": {
+    "fallbackUser": "User",
+    "privateKey": {
+      "prefix": "PK:",
+      "noKey": "No key"
+    },
+    "deleteAccount": {
+      "button": "Delete account",
+      "title": "Delete",
+      "confirmMessage": "Are you sure?",
+      "actions": {
+        "no": "No",
+        "yes": "Yes"
+      },
+      "alerts": {
+        "connectionError": "Could not connect"
+      }
+    },
+    "settingsTitle": "Settings",
+    "versionPrefix": "Version",
+    "sections": {
+      "account": "Account",
+      "security": "Security",
+      "preferences": "Preferences"
+    },
+    "items": {
+      "editProfile": "Edit profile",
+      "lightDark": "Light/Dark",
+      "faceId": "Face ID",
+      "twoFA": "2FA Authentication",
+      "kyc": "KYC Verification",
+      "notifications": "Notifications",
+      "localCurrency": "Local currency",
+      "language": "Language",
+      "logout": "Log out"
+    },
+    "status": {
+      "enabled": "Enabled",
+      "kycLevel2": "Verified level 2"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "wallet": "Wallet",
+    "news": "News",
+    "profile": "Profile"
+  }
+}
