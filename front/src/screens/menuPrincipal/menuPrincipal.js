@@ -12,6 +12,7 @@ import {
   ActivityIndicator,
   Image,
   Alert,
+  Modal,
 } from "react-native";
 import { Search, ArrowRight, X, Star } from "lucide-react-native";
 
@@ -23,7 +24,7 @@ import { useFocusEffect } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 
 const { width } = Dimensions.get("window");
-const BASE_URL = "http://192.168.1.44:8080"; 
+const BASE_URL = "http://192.168.1.44:8080";
 const isWeb = Platform.OS === 'web';
 const NAV_HEIGHT = 90;
 
@@ -48,7 +49,20 @@ export default function MenuPrincipal({ navigation }) {
   const [activeFilter, setActiveFilter] = useState("all");
   const [userCurrency, setUserCurrency] = useState("USD");
 
+  const [selectedCrypto, setSelectedCrypto] = useState(null);
+  const [infoVisible, setInfoVisible] = useState(false);
+
   const isFetching = useRef(false);
+
+  const openCryptoInfo = (crypto) => {
+    setSelectedCrypto(crypto);
+    setInfoVisible(true);
+  };
+
+  const closeCryptoInfo = () => {
+    setInfoVisible(false);
+    setSelectedCrypto(null);
+  };
 
   const fetchUserSettings = async () => {
     if (!user?.userId) return null;
@@ -88,8 +102,7 @@ export default function MenuPrincipal({ navigation }) {
 
     const vsCurrency = (currency || "EUR").toUpperCase();
 
-    // RESTAURACIÓN DE LÓGICA DE APIS DIFERENCIADAS
-    const geckoUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${vsCurrency.toLowerCase()}&order=market_cap_desc&per_page=${currentLimit}&page=1&sparkline=false`;
+    const geckoUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${vsCurrency.toLowerCase()}&order=market_cap_desc&per_page=${currentLimit}&page=1&sparkline=true`;
     const cmcUrl = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=${currentLimit}&convert=${vsCurrency}`;
 
     try {
@@ -109,7 +122,6 @@ export default function MenuPrincipal({ navigation }) {
 
       const data = await response.json();
 
-      // PARSEADO WEB (CoinGecko)
       if (isWeb && Array.isArray(data)) {
         const formatted = data.map((coin) => ({
           id: coin.id,
@@ -118,11 +130,15 @@ export default function MenuPrincipal({ navigation }) {
           image: coin.image,
           current_price: coin.current_price,
           price_change_percentage_24h: coin.price_change_percentage_24h,
+          market_cap: coin.market_cap,
+          market_cap_rank: coin.market_cap_rank,
+          total_volume: coin.total_volume,
+          high_24h: coin.high_24h,
+          low_24h: coin.low_24h,
+          sparkline: coin.sparkline_in_7d?.price || [],
         }));
         setCryptos(formatted);
-      } 
-      // PARSEADO MÓVIL (CoinMarketCap)
-      else if (!isWeb && data?.data && Array.isArray(data.data)) {
+      } else if (!isWeb && data?.data && Array.isArray(data.data)) {
         const formatted = data.data.map((coin) => ({
           id: coin.slug,
           name: coin.name,
@@ -130,6 +146,9 @@ export default function MenuPrincipal({ navigation }) {
           image: `https://s2.coinmarketcap.com/static/img/coins/64x64/${coin.id}.png`,
           current_price: coin.quote?.[vsCurrency]?.price,
           price_change_percentage_24h: coin.quote?.[vsCurrency]?.percent_change_24h,
+          market_cap: coin.quote?.[vsCurrency]?.market_cap,
+          market_cap_rank: coin.cmc_rank,
+          total_volume: coin.quote?.[vsCurrency]?.volume_24h,
         }));
         setCryptos(formatted);
       }
@@ -263,6 +282,7 @@ export default function MenuPrincipal({ navigation }) {
                 C={C}
                 styles={styles}
                 currencySymbol={CURRENCY_SYMBOLS[userCurrency] || userCurrency}
+                onPress={() => openCryptoInfo(item)}
               />
             ))}
           </ScrollView>
@@ -285,6 +305,7 @@ export default function MenuPrincipal({ navigation }) {
                   item={item}
                   isFav={favoritesIds.includes(item.id)}
                   onFavPress={() => toggleFavorite(item)}
+                  onPress={() => openCryptoInfo(item)}
                   C={C}
                   styles={styles}
                   currencySymbol={CURRENCY_SYMBOLS[userCurrency] || userCurrency}
@@ -314,6 +335,15 @@ export default function MenuPrincipal({ navigation }) {
         </View>
         <View style={styles.bottomSpacer} />
       </ScrollView>
+
+      <CryptoInfoModal
+        visible={infoVisible}
+        crypto={selectedCrypto}
+        onClose={closeCryptoInfo}
+        C={C}
+        styles={styles}
+        currencySymbol={CURRENCY_SYMBOLS[userCurrency] || userCurrency}
+      />
     </View>
   );
 
@@ -346,10 +376,10 @@ export default function MenuPrincipal({ navigation }) {
   );
 }
 
-const TrendingCard = ({ item, C, styles, currencySymbol }) => {
+const TrendingCard = ({ item, C, styles, currencySymbol, onPress }) => {
   const isPositive = (item.price_change_percentage_24h || 0) >= 0;
   return (
-    <View style={styles.trendingCard}>
+    <TouchableOpacity style={styles.trendingCard} activeOpacity={0.85} onPress={onPress}>
       <View style={styles.cardHeader}>
         <View style={styles.coinInfo}>
           <Image source={{ uri: item.image }} style={styles.coinLogo} />
@@ -367,14 +397,14 @@ const TrendingCard = ({ item, C, styles, currencySymbol }) => {
       <Text style={styles.cardPrice}>
         {item.current_price?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {currencySymbol}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
-const MarketItem = ({ item, isFav, onFavPress, C, styles, currencySymbol }) => {
+const MarketItem = ({ item, isFav, onFavPress, onPress, C, styles, currencySymbol }) => {
   const isPositive = (item.price_change_percentage_24h || 0) >= 0;
   return (
-    <View style={styles.marketItem}>
+    <TouchableOpacity style={styles.marketItem} activeOpacity={0.85} onPress={onPress}>
       <View style={styles.marketInfo}>
         <Image source={{ uri: item.image }} style={styles.marketIcon} />
         <View>
@@ -391,10 +421,141 @@ const MarketItem = ({ item, isFav, onFavPress, C, styles, currencySymbol }) => {
             {isPositive ? "+" : ""}{Number(item.price_change_percentage_24h || 0).toFixed(2)}%
           </Text>
         </View>
-        <TouchableOpacity onPress={onFavPress} style={styles.starBtn}>
+        <TouchableOpacity
+          onPress={(e) => {
+            e.stopPropagation?.();
+            onFavPress();
+          }}
+          style={styles.starBtn}
+        >
           <Star size={20} color={isFav ? "#FFD700" : C.textMuted} fill={isFav ? "#FFD700" : "transparent"} />
         </TouchableOpacity>
       </View>
+    </TouchableOpacity>
+  );
+};
+
+const CryptoInfoModal = ({ visible, crypto, onClose, C, styles, currencySymbol }) => {
+  if (!crypto) return null;
+
+  const isPositive = (crypto.price_change_percentage_24h || 0) >= 0;
+
+  return (
+    <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}>
+      <View style={styles.modalOverlay}>
+        <View style={styles.cryptoModal}>
+          <View style={styles.modalHeader}>
+            <View style={styles.coinInfo}>
+              <Image source={{ uri: crypto.image }} style={styles.marketIcon} />
+              <View>
+                <Text style={styles.modalTitle}>{crypto.name}</Text>
+                <Text style={styles.coinSymbol}>{String(crypto.symbol || "").toUpperCase()}</Text>
+              </View>
+            </View>
+
+            <TouchableOpacity onPress={onClose} style={styles.modalCloseBtn}>
+              <X size={22} color={C.textMuted} />
+            </TouchableOpacity>
+          </View>
+          <MiniChart data={crypto.sparkline} C={C} />
+
+          <View style={styles.infoRow}>
+            <Text style={styles.infoLabel}>Precio actual</Text>
+            <Text style={styles.infoValue}>
+              {crypto.current_price?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {currencySymbol}
+            </Text>
+          </View>
+
+          <View style={styles.infoRow}>
+            <Text style={styles.infoLabel}>Cambio 24h</Text>
+            <Text style={[styles.infoValue, { color: isPositive ? C.primary : C.danger }]}>
+              {isPositive ? "+" : ""}{Number(crypto.price_change_percentage_24h || 0).toFixed(2)}%
+            </Text>
+          </View>
+
+          {crypto.market_cap_rank && (
+            <View style={styles.infoRow}>
+              <Text style={styles.infoLabel}>Ranking</Text>
+              <Text style={styles.infoValue}>#{crypto.market_cap_rank}</Text>
+            </View>
+          )}
+
+          {crypto.market_cap && (
+            <View style={styles.infoRow}>
+              <Text style={styles.infoLabel}>Capitalización</Text>
+              <Text style={styles.infoValue}>
+                {crypto.market_cap.toLocaleString(undefined, { maximumFractionDigits: 0 })} {currencySymbol}
+              </Text>
+            </View>
+          )}
+
+          {crypto.total_volume && (
+            <View style={styles.infoRow}>
+              <Text style={styles.infoLabel}>Volumen 24h</Text>
+              <Text style={styles.infoValue}>
+                {crypto.total_volume.toLocaleString(undefined, { maximumFractionDigits: 0 })} {currencySymbol}
+              </Text>
+            </View>
+          )}
+
+          {crypto.high_24h && (
+            <View style={styles.infoRow}>
+              <Text style={styles.infoLabel}>Máximo 24h</Text>
+              <Text style={styles.infoValue}>
+                {crypto.high_24h.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {currencySymbol}
+              </Text>
+            </View>
+          )}
+
+          {crypto.low_24h && (
+            <View style={styles.infoRow}>
+              <Text style={styles.infoLabel}>Mínimo 24h</Text>
+              <Text style={styles.infoValue}>
+                {crypto.low_24h.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {currencySymbol}
+              </Text>
+            </View>
+          )}
+
+          <TouchableOpacity style={styles.modalButton} onPress={onClose}>
+            <Text style={styles.modalButtonText}>Cerrar</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </Modal>
+  );
+};
+
+const MiniChart = ({ data, C }) => {
+  if (!data || data.length < 2) return null;
+
+  const width = 300;
+  const height = 90;
+  const max = Math.max(...data);
+  const min = Math.min(...data);
+
+  const points = data
+    .map((value, index) => {
+      const x = (index / (data.length - 1)) * width;
+      const y = height - ((value - min) / (max - min || 1)) * height;
+      return `${x},${y}`;
+    })
+    .join(" ");
+
+  return (
+    <View style={{ marginVertical: 16, alignItems: "center" }}>
+      <svg width={width} height={height}>
+        <polyline
+          points={points}
+          fill="none"
+          stroke={C.primary}
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <Text style={{ color: C.textMuted, fontSize: 12, marginTop: 6 }}>
+        Evolución últimos 7 días
+      </Text>
     </View>
   );
 };
@@ -655,5 +816,70 @@ const makeStyles = (C) => StyleSheet.create({
   },
   bottomSpacer: {
     height: 110,
+  },
+
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.45)",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 24,
+  },
+  cryptoModal: {
+    width: "100%",
+    maxWidth: 430,
+    backgroundColor: C.cardBg,
+    borderRadius: 24,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: C.border,
+  },
+  modalHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 18,
+  },
+  modalTitle: {
+    color: C.textMain,
+    fontSize: 20,
+    fontWeight: "900",
+  },
+  modalCloseBtn: {
+    padding: 8,
+  },
+  infoRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: C.border,
+    gap: 12,
+  },
+  infoLabel: {
+    color: C.textMuted,
+    fontSize: 14,
+    fontWeight: "600",
+  },
+  infoValue: {
+    color: C.textMain,
+    fontSize: 14,
+    fontWeight: "800",
+    textAlign: "right",
+    flex: 1,
+  },
+  modalButton: {
+    backgroundColor: C.primary,
+    height: 50,
+    borderRadius: 25,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+  },
+  modalButtonText: {
+    color: "#000000",
+    fontSize: 16,
+    fontWeight: "900",
   },
 });

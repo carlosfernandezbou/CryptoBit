@@ -51,6 +51,7 @@ export function SettingsProvider({ children }) {
   const { userId, token } = useContext(Context);
 
   const [isDarkMode, setIsDarkMode] = useState(false);
+  //cambiar a false
   const [language, setLanguage] = useState("EN");
   const [currency, setCurrency] = useState("USD");
   const [faceId, setFaceId] = useState(true);

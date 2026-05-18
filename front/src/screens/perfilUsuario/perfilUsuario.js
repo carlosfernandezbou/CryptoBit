@@ -78,11 +78,9 @@ export default function PerfilUsuario(props) {
 
   const shownUser = dbUser ?? user ?? {};
 
-  // ✅ Función para copiar sin alertas (Silent Copy)
   const copyToClipboard = (text) => {
     if (!text) return;
     Clipboard.setString(text);
-    // Eliminados los Alert y alert() por petición
   };
 
   const resolveAvatarUri = () => {
@@ -205,7 +203,6 @@ export default function PerfilUsuario(props) {
         <Image source={{ uri: resolveAvatarUri() }} style={styles.avatar} />
         <Text style={styles.name}>{shownUser?.firstName || t("profile.fallbackUser")}</Text>
 
-        {/* ✅ Fila de la Private Key sin el punto rojo */}
         <TouchableOpacity
           style={styles.walletRow}
           onPress={() => copyToClipboard(shownUser?.privateKey)}

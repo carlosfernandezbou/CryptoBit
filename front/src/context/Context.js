@@ -22,6 +22,26 @@ export const Provider = ({ children }) => {
           : await SecureStore.getItemAsync("user_session");
         if (savedUser) {
           const parsed = JSON.parse(savedUser);
+
+          if (parsed?.token) {
+            const payload = JSON.parse(atob(parsed.token.split(".")[1]));
+            const isExpired = payload.exp * 1000 < Date.now();
+
+            if (isExpired) {
+              if (Platform.OS === "web") {
+                localStorage.removeItem("user_session");
+              } else {
+                await SecureStore.deleteItemAsync("user_session");
+              }
+
+              setUser(null);
+              setIsLogged(false);
+              setUserId(0);
+              setToken(null);
+              return;
+            }
+          }
+
           setUser(parsed);
           setIsLogged(true);
 

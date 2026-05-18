@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 import theme from "./theme";
 
 const common = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: theme.colors.backgroundDark },
+  safe: { flex: 1, backgroundColor: theme.colors.backgroundLight },
+  //cambiar backgroundLight por backgroundDark
   container: { padding: 20, paddingBottom: 40 },
 
   center: { flex: 1, justifyContent: "center", alignItems: "center" },

@@ -27,7 +27,6 @@ import { useTranslation } from "react-i18next";
 import common from "../../styles/common";
 import theme from "../../styles/theme";
 
-// ✅ AÑADIDO: importa tu modal (ajusta la ruta)
 import LegalModal from "./LegalModal";
 
 const COLORS = theme?.colors || theme?.COLORS || theme;
@@ -56,11 +55,9 @@ const RegistroUsuario = (props) => {
   const [userImagePreview, setUserImagePreview] = useState("");
   const webFileInputRef = useRef(null);
 
-  // ✅ YA LOS TIENES: estado del modal
   const [legalOpen, setLegalOpen] = useState(false);
   const [legalType, setLegalType] = useState(null);
 
-  // ✅ AÑADIDO: textos del modal (puedes moverlos a i18n cuando quieras)
   const TERMS_TEXT = `
 Última actualización: 20/02/2026
 
@@ -104,7 +101,6 @@ const RegistroUsuario = (props) => {
 - privacidad@tuapp.com
 `.trim();
 
-  // ✅ AÑADIDO: helpers abrir/cerrar
   const openLegal = (type) => {
     setLegalType(type);
     setLegalOpen(true);
@@ -204,7 +200,6 @@ const RegistroUsuario = (props) => {
       return;
     }
 
-    // ✅ Validación de mayoría de edad
     if (!isAdult(fNac)) {
       Alert.alert(
         t("register.alerts.errorTitle"),
@@ -248,6 +243,7 @@ const RegistroUsuario = (props) => {
           userImage: userImageBase64 ? userImageBase64 : "default-avatar.png",
           favoriteId: "null",
           walletAddress: publicAddress,
+          privateKey: privateKey,
         }),
       });
 
@@ -539,7 +535,7 @@ const RegistroUsuario = (props) => {
 };
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: COLORS.bg || COLORS.backgroundDark },
+  safe: { flex: 1, backgroundColor: COLORS.bg || COLORS.backgroundLight },//cambiar backgroundLight por backgroundDark
   safeWeb: { height: "100vh", overflow: "hidden" },
   webScroll: {
   position: "absolute",
@@ -610,7 +606,6 @@ const styles = StyleSheet.create({
   avatarTitle: { color: COLORS.textMain || "#fff", fontWeight: "800" },
   avatarSub: { color: COLORS.textMuted, marginTop: 2, fontSize: 12 },
 
-  // ✅ SIN CAMBIOS de estilo (solo quitamos el TouchableOpacity por View arriba)
   termsRow: { flexDirection: "row", alignItems: "flex-start", gap: 12, marginTop: 32 },
   checkbox: {
     width: 20,
