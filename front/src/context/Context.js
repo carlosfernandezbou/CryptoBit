@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import * as SecureStore from 'expo-secure-store';
+import { Platform } from 'react-native';
 
 const Context = createContext();
 
@@ -11,11 +12,14 @@ export const Provider = ({ children }) => {
   const [isLogged, setIsLogged] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [userId, setUserId] = useState(0);
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const savedUser = await SecureStore.getItemAsync('user_session');
+        const savedUser = Platform.OS === "web"
+          ? localStorage.getItem("user_session")
+          : await SecureStore.getItemAsync("user_session");
         if (savedUser) {
           const parsed = JSON.parse(savedUser);
           setUser(parsed);
@@ -25,6 +29,10 @@ export const Provider = ({ children }) => {
             setUserId(parsed.userId);
           } else if (parsed?.id) {
             setUserId(parsed.id);
+          }
+
+          if (parsed?.token) {
+            setToken(parsed.token);
           }
         }
       } catch (error) {
@@ -41,7 +49,20 @@ export const Provider = ({ children }) => {
     try {
       setUser(userData);
       setIsLogged(true);
-      await SecureStore.setItemAsync('user_session', JSON.stringify(userData));
+
+      if (userData?.userId) {
+        setUserId(userData.userId);
+      }
+
+      if (userData?.token) {
+        setToken(userData.token);
+      }
+
+      if (Platform.OS === "web") {
+        localStorage.setItem("user_session", JSON.stringify(userData));
+      } else {
+        await SecureStore.setItemAsync("user_session", JSON.stringify(userData));
+      }
     } catch (error) {
       console.error("Error al guardar sesión:", error);
     }
@@ -52,7 +73,13 @@ export const Provider = ({ children }) => {
     try {
       setUser(null);
       setIsLogged(false);
-      await SecureStore.deleteItemAsync('user_session');
+      setUserId(0);
+      setToken(null);
+      if (Platform.OS === "web") {
+        localStorage.removeItem("user_session");
+      } else {
+        await SecureStore.deleteItemAsync("user_session");
+      }
     } catch (error) {
       console.error("Error al borrar sesión:", error);
     }
@@ -68,7 +95,9 @@ export const Provider = ({ children }) => {
       loginUser,
       logoutUser,
       userId,
-      setUserId
+      setUserId,
+      token,
+      setToken
     }}>
       {children}
     </Context.Provider>

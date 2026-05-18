@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import es.cryptobit.security.JwtUtil;
 
 import java.util.List;
 import java.util.Optional;
@@ -82,16 +83,18 @@ public class UserController {
 
     //http://localhost:8080/API/Login
     @PostMapping("/API/Login")
-    public ResponseEntity<String> login(@RequestBody User loginUser) {
+    public ResponseEntity<?> login(@RequestBody User loginUser) {
         try {
             if (loginUser.getEmail() == null || loginUser.getPassword() == null) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Faltan campos (email/password)");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body("Faltan campos (email/password)");
             }
 
             Optional<User> userOpt = userRepository.findByEmail(loginUser.getEmail());
 
             if (userOpt.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("usuario/contraseña no encontrados");
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body("usuario/contraseña no encontrados");
             }
 
             User userDB = userOpt.get();
@@ -100,16 +103,24 @@ public class UserController {
             String dbHash = userDB.getPassword().trim();
 
             if (!incomingHash.equalsIgnoreCase(dbHash)) {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("usuario/contraseña no encontrados");
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body("usuario/contraseña no encontrados");
             }
 
-            System.out.println("Login correcto: " + loginUser.getEmail());
-            return ResponseEntity.ok("Login correcto");
+            String token = JwtUtil.generateToken(userDB.getEmail());
+
+            return ResponseEntity.ok(
+                    Map.of(
+                            "message", "Login correcto",
+                            "token", token,
+                            "userId", userDB.getId()
+                    )
+            );
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Error en login: " + e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error en login");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error en login");
         }
     }
 

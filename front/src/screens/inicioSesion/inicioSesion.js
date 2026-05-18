@@ -14,7 +14,7 @@ import {
   Pressable,
   SafeAreaView,
   Modal,
-  ActivityIndicator, 
+  ActivityIndicator,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -36,7 +36,7 @@ const InicioSesion = (props) => {
   const [isBiometricSupported, setIsBiometricSupported] = useState(false);
   const { t, i18n } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
   const { loginUser, setUserId } = useContext(Context);
 
@@ -135,6 +135,15 @@ const InicioSesion = (props) => {
         return;
       }
 
+      const loginData = await response.json();
+      const token = loginData?.token;
+
+      if (!token) {
+        setLoading(false);
+        Alert.alert(t("login.alerts.errorTitle"), "No se recibió token");
+        return;
+      }
+
       const idRes = await fetch(
         `${BASE_URL}/API/UserIdByEmail?email=${encodeURIComponent(mail)}`,
         { method: "GET" }
@@ -167,7 +176,7 @@ const InicioSesion = (props) => {
 
       const fullUserData = await userRes.json();
       setUserId(fetchedId);
-      await loginUser({ ...fullUserData, userId: fetchedId });
+      await loginUser({ ...fullUserData, userId: fetchedId,  token: token });
 
       props.navigation.navigate("HomeNav");
     } catch (error) {
@@ -330,9 +339,9 @@ const InicioSesion = (props) => {
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={{ flex: 1 }}
           >
-<ScrollView
-  style={{ flex: 1 }}
-  contentContainerStyle={styles.scrollContainer}
+            <ScrollView
+              style={{ flex: 1 }}
+              contentContainerStyle={styles.scrollContainer}
               bounces={false}
               showsVerticalScrollIndicator={false}
               showsHorizontalScrollIndicator={false}

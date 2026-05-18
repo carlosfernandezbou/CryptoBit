@@ -48,7 +48,7 @@ function buildPalette(isDark) {
 }
 
 export function SettingsProvider({ children }) {
-  const { userId } = useContext(Context);
+  const { userId, token } = useContext(Context);
 
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [language, setLanguage] = useState("EN");
@@ -66,7 +66,11 @@ export function SettingsProvider({ children }) {
 
     const loadSettings = async () => {
       try {
-        const res = await fetch(`${BASE_URL}/API/Settings/${userId}`);
+        const res = await fetch(`${BASE_URL}/API/Settings/${userId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         if (!res.ok) return;
 
         const data = await res.json();
@@ -98,7 +102,10 @@ export function SettingsProvider({ children }) {
     try {
       await fetch(`${BASE_URL}/API/EditSettings/${userId}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify(payload),
       });
     } catch (e) {
