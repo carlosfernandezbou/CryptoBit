@@ -32,7 +32,7 @@ import LegalModal from "./LegalModal";
 const COLORS = theme?.colors || theme?.COLORS || theme;
 const isWeb = Platform.OS === "web";
 
-const API_BASE = "http://192.168.1.44:8080";
+const API_BASE = "http://192.168.1.29:8080";
 
 const RegistroUsuario = (props) => {
   const { t } = useTranslation();

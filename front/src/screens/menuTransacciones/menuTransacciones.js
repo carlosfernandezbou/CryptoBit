@@ -20,7 +20,7 @@ import Nav from "../../components/Nav";
 import common from "../../styles/common";
 import Context from "../../context/Context";
 
-const BASE_URL = "http://192.168.1.44:8080";
+const BASE_URL = "http://192.168.1.29:8080";
 
 export default function MenuTransacciones({ navigation }) {
   const { t } = useTranslation();
